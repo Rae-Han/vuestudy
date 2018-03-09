@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>VUE</title>
+
+  <link rel="stylesheet" href="./_.css">
+</head>
+<body>
+  
+  <div id="app">
+    <span>메시지: {{ msg }} {{ counter }}</span> <br>
+    <span v-once>다시는 변경하지 않습니다: {{ msg }} {{ counter }}</span> <br>
+    <button @click='plusCounter'>change counter</button>
+
+    <div class="hrz"></div>
+
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    <p>Using v-bind: <span v-bind:id='vbind'></span></p>
+
+    <div class="hrz"></div>
+
+    <p>{{ number + 1 }}</p>
+    <p>{{ ok ? 'YES' : 'NO' }}</p>
+    <p>{{ message.split('').reverse().join('') }}</p>
+    <div v-bind:id="'list-' + id">Show binded id</div>
+
+    <div class="hrz"></div>
+    
+    <p v-if='seen'>이제 나를 볼수 있어요 / 콘솔 창에 app.seen = false; 를 해보세요. 
+      <button @click='seen=false'>또는 버튼으로 대신 하기</button>
+    </p>
+
+    <div class="hrz"></div>
+
+    <p>
+        <img style='width: 100px; vertical-align: middle' :src="front? vue_logo : angular_logo" alt="" @click='front=!front'>
+        <img style='width: 100px; vertical-align: middle' :src="front? angular_logo : vue_logo " alt="" @click='front=!front'>
+        <- 로고를 클릭해 보세요.</p>
+    
+    <div class="hrz"></div>
+
+    <div>
+        <p>Dom Event</p>
+        <div class="event_ground" v-html='event_item'></div>
+        <p>
+          <button @click='addItem'>Add</button>
+          <button @click='delItem'>Delete</button>
+        </p>
+      </div>
+  </div>
+
+  <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src='./_.js'></script>
+  
+</body>

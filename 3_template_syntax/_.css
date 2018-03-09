@@ -1,0 +1,16 @@
+div[id^=app] {
+  padding: 24px 0;
+
+  border-top: 1px solid #222;
+}
+
+.hrz {
+  margin: 24px 0;
+
+  border-top: 1px solid #222;
+}
+
+#v-bind {
+  color: red;
+  content: 'This should be red';
+}
